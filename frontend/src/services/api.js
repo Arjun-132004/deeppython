@@ -1,4 +1,5 @@
-const apiBaseUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+const apiBaseUrl =
+  import.meta.env.VITE_API_URL ?? (import.meta.env.PROD ? '' : 'http://localhost:8000');
 
 async function request(path, options = {}) {
   // Small wrapper so every API call handles JSON and errors the same way.
